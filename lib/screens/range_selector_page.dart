@@ -24,7 +24,7 @@ class _RangeSelectorPageState extends State<RangeSelectorPage> {
       ),
       body: RangeSelectorForm(
         formKey: formKey,
-        minValueSetter: (int value) => _max = value,
+        minValueSetter: (int value) => _min = value,
         maxValueSetter: (int value) => _max = value,
       ),
       floatingActionButton: FloatingActionButton(

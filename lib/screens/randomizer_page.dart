@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_foundations/randomizer_change_notifier.dart';
+import 'package:flutter_foundations/randomizer_state_notifier.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class RandomizerPage extends ConsumerWidget {
@@ -24,7 +24,7 @@ class RandomizerPage extends ConsumerWidget {
       floatingActionButton: FloatingActionButton.extended(
         label: const Text('Generate'),
         onPressed: () {
-          ref.read(randomizerProvider).generateRandomNumber();
+          ref.read(randomizerProvider.notifier).generateRandomNumber();
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,

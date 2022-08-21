@@ -1,6 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:flutter_foundations/randomizer_change_notifier.dart';
+import 'package:flutter_foundations/randomizer_state_notifier.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 typedef IntValueSetter = void Function(int value);
@@ -15,7 +15,7 @@ class RangeSelectorForm extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final randomizer = ref.watch(randomizerProvider);
+    final randomizer = ref.watch(randomizerProvider.notifier);
 
     return Form(
         key: formKey,
@@ -26,12 +26,12 @@ class RangeSelectorForm extends ConsumerWidget {
             children: [
               RangeSelectorTextFormField(
                 labelText: 'Minimum',
-                intValueSetter: (value) => randomizer.min = value,
+                intValueSetter: (value) => randomizer.setMin(value),
               ),
               const SizedBox(height: 12),
               RangeSelectorTextFormField(
                 labelText: 'Maximum',
-                intValueSetter: (value) => randomizer.max = value,
+                intValueSetter: (value) => randomizer.setMax(value),
               ),
             ],
           ),

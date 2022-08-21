@@ -26,12 +26,11 @@ class RangeSelectorForm extends StatelessWidget {
             children: [
               RangeSelectorTextFormField(
                 labelText: 'Minimum',
-                intValueSetter: (int value) => minValueSetter,
+                intValueSetter: minValueSetter,
               ),
               const SizedBox(height: 12),
               RangeSelectorTextFormField(
-                  labelText: 'Maximum',
-                  intValueSetter: (int value) => maxValueSetter),
+                  labelText: 'Maximum', intValueSetter: maxValueSetter),
             ],
           ),
         ));

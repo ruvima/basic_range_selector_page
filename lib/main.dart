@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_foundations/range_selector_page.dart';
+import 'package:flutter_foundations/screens/range_selector_page.dart';
 
 void main() {
   runApp(const AppWidget());

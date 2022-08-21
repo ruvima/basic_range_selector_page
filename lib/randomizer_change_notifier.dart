@@ -1,5 +1,9 @@
-import 'package:flutter/foundation.dart';
 import 'dart:math';
+import 'package:flutter/foundation.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+final randomizerProvider =
+    ChangeNotifierProvider(((ref) => RandomizerChangeNotifier()));
 
 class RandomizerChangeNotifier extends ChangeNotifier {
   final _randomGenerator = Random();
